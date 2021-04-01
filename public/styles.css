@@ -1,0 +1,211 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+html {
+  font-family: "Work Sans", sans-serif;
+}
+body {
+  padding: 0 16px;
+  background-image:linear-gradient( #fafafa, #f1f513 );
+  background-repeat: no-repeat;
+  background-size: 100% 100vh;
+  
+  /* animation: gradient 15s ease infinite; */
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+header {
+  background-color: #f5ba13;
+  margin: auto -16px;
+  padding: 10px 32px;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
+  text-align: center;
+  vertical-align: middle;
+}
+
+header h1 {
+  color: #fff;
+  font-family: 'Satisfy', cursive;
+  font-weight: 200;
+   display: inline-block;
+   font-size: 2rem;
+  
+}
+
+footer {
+  position: absolute;
+  text-align: center;
+  bottom: 0;
+  right:0;
+  width: 100%;
+  height: 2.5rem;
+}
+
+footer p {
+  color: #AAAAAA;
+  font-size: 1rem;
+  font-weight: 100;
+}
+header i{
+  color:white;
+  font-size: 2.5rem;
+  position:absolute;
+  left:30px;
+  
+ 
+}
+.note {
+  background: #fff;
+  border-radius: 7px;
+  /* box-shadow: 0 2px 5px #ccc; */
+  padding: 10px 15px;
+  width: 270px;
+  margin: 12px;
+  float: left;
+}
+.note h1 {
+  font-size: 1.1em;
+  margin-bottom: 6px;
+  padding: 3px 0; 
+}
+.note p {
+  font-size: 1rem;
+  margin-bottom: 10px ;
+  white-space: pre-wrap;
+ word-wrap: break-word;
+}
+
+.note button {
+  position: relative;
+  float: right;
+  margin-right: -5px; 
+  margin-top: 15px;
+  color: #f5ba13;
+  border: none;
+  width: 36px;
+  height: 36px;
+  cursor: pointer;
+  outline: none;
+  background-color: white;
+}
+
+form.create-note {
+  position: relative;
+  width: 350px;
+  margin: 30px auto 20px auto;
+  background: #ffffff; 
+  padding: 15px;
+  border-radius: 7px;
+  box-shadow: 0 1px 2px rgb(138, 137, 137);  
+}
+
+form.create-note input,
+form.create-note textarea {
+  width: 100%;
+  border: none;
+  padding: 4px;
+  outline: none;
+  font-size: 1em;
+  font-family: inherit;
+  resize: none;
+}
+
+form.create-note button {
+  position: absolute;
+  right: 18px;
+  bottom: -18px;
+  background: #f5ba13;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  height: 40px;
+  width: 40px;
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  outline: none;
+}
+
+
+
+
+
+.shimmer {
+  text-align: center;
+  color: rgba(255, 255, 255, 0.1);
+  background: -webkit-gradient(linear, left top, right top, from(#222), to(#222), color-stop(0.5, #fff));
+  background: -moz-gradient(linear, left top, right top, from(#222), to(#222), color-stop(0.5, #fff));
+  background: gradient(linear, left top, right top, from(#222), to(#222), color-stop(0.5, #fff));
+  -webkit-background-size: 125px 100%;
+  -moz-background-size: 125px 100%;
+  background-size: 125px 100%;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  background-clip: text;
+  -webkit-animation-name: shimmer;
+  -moz-animation-name: shimmer;
+  animation-name: shimmer;
+  -webkit-animation-duration: 2s;
+  -moz-animation-duration: 2s;
+  animation-duration: 2s;
+  -webkit-animation-iteration-count: infinite;
+  -moz-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  background-color: #222;
+}
+
+@-moz-keyframes shimmer {
+  0% {
+    background-position: top left;
+  }
+
+  100% {
+    background-position: top right;
+  }
+}
+
+@-webkit-keyframes shimmer {
+  0% {
+    background-position: top left;
+  }
+
+  100% {
+    background-position: top right;
+  }
+}
+
+@-o-keyframes shimmer {
+  0% {
+    background-position: top left;
+  }
+
+  100% {
+    background-position: top right;
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: top left;
+  }
+
+  100% {
+    background-position: top right;
+  }
+}
