@@ -10,14 +10,15 @@ app.use(bodyParser.urlencoded({
 }));
 app.use(cors());
 app.use(bodyParser.json());
-//app.use(express.static("public"));
+app.use(express.json());
+app.use(express.static("public"));
 const URL = process.env.MONGO_URL;
 
 mongoose
   .connect(
     URL, {
       useNewUrlParser: true,
-      useUnifiedTopology: true
+      useUnifiedTopology: true,useCreateIndex : true, useFindAndModify: false
     }
   )
   .then(() => console.log("Database Connected Successfully"))
@@ -25,6 +26,8 @@ mongoose
 
 const notes = require("../api/notes");
 app.use("/api/notes", notes);
+const Auth = require("../api/Authcontroller");
+app.use("/api/Auth", Auth);
 
 const port = process.env.PORT || 5000;
 app.listen(port, () => {

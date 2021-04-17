@@ -3,34 +3,47 @@ import Header from "./Header.jsx";
 import Footer from "./Footer.jsx";
 import Note from "./Note.jsx";
 import axios from "axios";
+import { BrowserRouter, Route, Switch} from 'react-router-dom';
 //import notes from "../notes.js";
 import CreateArea from "./CreateArea.jsx";
+import SignUp from "./SignUp.jsx";
+import Login from "./Login.jsx";
+import Welcome from "./Welcome.jsx";
 
 function App() {
+ 
   const [notes, setNotes] = useState([]);
 
-  const getData = () => fetch("/api/notes").then((res) => res.json());
-  useEffect(() => {
-    getData().then((notes) => setNotes(notes));
+  //const getData = () => fetch("/api/notes").then((res) => res.json());
+   //getData().then((notes) => setNotes(notes));
+ useEffect(() => {
+     axios
+    		.get("/api/notes", {
+          headers: {
+            "x-access-token":localStorage.getItem("token")
+          }
+        })
+    		.then((res) => {setNotes(res.data); })
+    		.catch((err) => console.log(err));
+    
   }, []);
 
-  //------------------------------------------------------------
-  //  axios
-  // 		.get("http://localhost:5000/")
-  // 		.then((res) => console.log(res))
-  // 		.catch((err) => console.log(err));
-  // }
-  //------------------------------------------------------------
-
+  
   function addNote(newNote) {
     setNotes((prevNotes) => {
       return [...prevNotes, newNote];
     });
     axios
-      .post("/api/notes", {
+      .post("/api/notes", 
+        {
         title: newNote.title,
-        content: newNote.content,
-      })
+        content: newNote.content
+        },{
+        headers: {
+          "x-access-token": localStorage.getItem("token")
+        }
+      }
+    )
       .then(function () {
         console.log("Note created successfully");
         //window.location.reload();
@@ -47,9 +60,17 @@ function App() {
       });
     });
     axios
-      .post("/api/notes/del", {
-        id: id,
-      })
+      .post(
+        "/api/notes/del",
+        {
+          id: id,
+        },
+        {
+          headers: {
+            "x-access-token": localStorage.getItem("token"),
+          },
+        }
+      )
       .then(function () {
         console.log("Deleted successfully");
       })
@@ -59,6 +80,12 @@ function App() {
   }
 
   return (
+    <BrowserRouter>
+    <Switch>
+    <Route path="/" exact><Welcome /></Route>
+    <Route path="/signup"><SignUp /></Route>
+    <Route path="/login"><Login /> </Route>
+    <Route path="/notes">
     <div>
       <Header />
       <CreateArea onAdd={addNote} />
@@ -76,6 +103,10 @@ function App() {
 
       <Footer />
     </div>
+    </Route>
+    
+    </Switch>
+    </BrowserRouter>
   );
 }
 export default App;
