@@ -9,7 +9,6 @@ const UserSchema = new mongoose.Schema({
 });
 
 const NoteSchema = new mongoose.Schema({
-  key: Number,
   title: String ,
   content: String ,
   userID: { type: mongoose.Schema.Types.ObjectId, ref: 'User' , required: true }
