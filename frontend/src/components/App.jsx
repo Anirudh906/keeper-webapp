@@ -23,6 +23,7 @@ function App() {
         </Route>
         <Route path="/notes">
           <Notes />
+         
         </Route>
       </Switch>
     </BrowserRouter>

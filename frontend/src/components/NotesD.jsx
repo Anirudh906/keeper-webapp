@@ -80,8 +80,11 @@ return (
   <div>
     <Header />
     <CreateArea onAdd={addNote} />
+    
+      
     {notes.map((noteItem, index) => {
       return (
+        
         <Note
           key={index}
           id={index}
@@ -92,7 +95,8 @@ return (
       );
     })}
 
-    <Footer />
+    
+       
   </div>
 );
 

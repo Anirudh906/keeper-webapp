@@ -2,16 +2,29 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-}
+} 
 html {
   font-family: "Work Sans", sans-serif;
+  height: 100%;
+  width: 100%;
+}
+.main-div {
+   height:100vh;
+   /* overflow-y: hidden; */
+   text-align:center;
+   overflow-x: hidden;
+   margin-left:-16px;
+   margin-right:-16px;
 }
 body {
   padding: 0 16px;
   background-image:linear-gradient( #fafafa, #f1f513 );
-  background-repeat: no-repeat;
+  /* background-repeat: no-repeat; */
   background-size: 100% 100vh;
-  
+   /* height: 100%; */
+   width: 100%;
+  overflow-x: hidden;
+  /* overflow-y: hidden; */
   /* animation: gradient 15s ease infinite; */
 }
 
@@ -28,6 +41,15 @@ body {
     background-position: 0% 50%;
   }
 }
+
+.light-bulb-main{
+  display:inline-block;
+  margin-top:100px;
+  margin-left: -100px;
+}
+
+
+
 
 header {
   background-color: #f5ba13;
@@ -48,7 +70,7 @@ header h1 {
 }
 
 .main h1{
-  color:rgba(255, 118, 5, 0.979);
+  color:rgba(255, 26, 5, 0.979);
   font-family: 'Satisfy',
   cursive;
   font-weight: 200;
@@ -56,34 +78,38 @@ header h1 {
   font-size: 5rem;
 }
 .main-h3 {
-  color: rgba(255, 118, 5, 0.979);
+  color: rgba(255, 5, 5, 0.979);
   font-family: 'Satisfy',
     cursive;
   font-weight: 200;
   display: inline-block;
   font-size: 3rem;
-  /* padding-left: 650px; */
+  margin-left: -100px;
 
 }
 .main {
-  text-align: center;
-  display:block;
+  /* padding-left: 200px; */
+  display:inline-block;
   /* padding-left: 750px; */
-  margin-top: 200px;
+  /* padding-top: 200px; */
+ text-align: left;
+ position:relative;
+ bottom :150px;   
+  
 }
-.welcomediv{
+/* .welcomediv{
   text-align: center;
-}
-footer {
-  position: absolute;
-  text-align: center;
-  bottom: 0;
-  right:0;
-  width: 100%;
-  height: 2.5rem;
+  height: 820px;
+  overflow: hidden;
+} */
+.footer {
+ text-align: center;
+   width: 100%;
+  
+  
 }
 
-footer p {
+.footer p {
   color: #AAAAAA;
   font-size: 1rem;
   font-weight: 100;
@@ -279,3 +305,208 @@ button {
     background-position: top right;
   }
 }
+.btn-main{
+  margin-left: 50px;
+}
+
+/* /// */
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+canvas {
+  display: block;
+  /* vertical-align: bottom; */
+  position: relative;
+  top: 0px;
+  left: 0; 
+  z-index: 100;
+  width: 600px;
+  height: 500px;
+}  
+
+ #lightbulb {
+  width: 600px;
+  height: 500px;
+  z-index: 200;
+  /* position: absolute; 
+  top: 100px;
+  left: 200px; */
+} 
+
+svg#lightbulb {
+  z-index: 200;
+  mix-blend-mode: multiply;
+}
+/* svg#cutout {
+  z-index: 300;
+  pointer-events: none;
+}  */
+
+/* svg#cutout path {
+  fill: #333;
+}  */
+
+ #Layer_3 polygon {
+ position: relative; 
+  opacity: 1;
+  transform-origin: 50% ;
+  transition: 500ms;
+} 
+
+#Layer_3 polygon:hover {
+  transform: scale(1.2);
+  z-index: 1000;
+}
+
+/* #tsparticles {
+  position: absolute;
+  width: 600px;
+  height: 500px;
+  background: linear-gradient(-45deg, #daf504, #f504d7, #b61924); 
+  background-size: 1000% 1000%;
+  animation: gradientAnimation 10000ms ease infinite;
+} */
+@media (max-width:550px) {
+  .main{
+    margin-top: 200px;
+  } 
+  .main h1 {
+    font-size: 7rem !important;
+  }
+}
+ @media (max-width: 987px){
+   .main-div{
+     overflow-y:scroll;
+    
+   }
+   .main{
+     margin-top: 200px;
+     text-align: center;
+   }
+   .main-h3{
+     padding-left: 100px;
+   }
+   .light-bulb-main{
+      text-align: center;
+      position:relative;
+      left:50px;
+   }
+
+  } 
+@media (max-width:680px){
+.main h1{
+  font-size: 3.5rem !important;
+}
+.main-h3{
+   font-size:1.5rem;
+}
+.MuiButton-outlinedSizeLarge{
+  
+  font-size:1rem !important;
+}
+.btn-main{
+  margin-top: 100px;
+  margin-left:-25px;
+}
+.footer p{
+  font-size:1rem;
+}
+}
+
+@media (max-width: 987px){
+svg{
+  display:none;
+}
+.main{
+  text-align: center;
+  margin-left: 100px;
+  margin-top: 300px;
+}
+
+}
+@media(max-width:620px){
+  html{
+    overflow-x: hidden;
+  }
+  form.create-note{
+    width: 300px;
+  
+  }
+  .Notescont{
+    margin-bottom: 50px;
+  }
+  body{
+    background-image: none;
+    background-color: rgb(253, 225, 147);
+  }
+ 
+}
+
+
+
+
+.box {
+  background-color: rgba(34, 34, 31, 0.768);
+  border-radius: 10px;
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.8);
+  margin: auto auto;
+  padding: 40px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.box h2 {
+  margin: 0 0 30px 0;
+  padding: 0;
+  color: #fff;
+  text-align: center;
+}
+
+.box .inputBox label {
+  color: #fff;
+}
+
+.box .inputBox input {
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid #fff;
+  color: #fff;
+  font-size: 18px;
+  letter-spacing: 2px;
+  margin-bottom: 30px;
+  outline: none;
+  padding: 10px 0;
+  width: 100%;
+}
+
+.box input[type="submit"] {
+  background: #ecf36a;
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+  cursor: pointer;
+  font-weight: 600;
+  padding: 10px 20px;
+  letter-spacing: 2px;
+  outline: none;
+  text-transform: uppercase;
+}
+
+.box input[type="submit"]:hover {
+  opacity: 0.8;
+}
+
+
+
+
+
+
